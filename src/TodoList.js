@@ -72,15 +72,21 @@ class TodoList extends Component {
         return (
             <Fragment>
                 <div className='header'>
-                    <div className='nav'>TodoList</div>
-                    <input className='input' placeholder="添加todo" value={this.state.inputValue} onChange={this.handleInput} />
-                    <button className='button' onClick={this.addTask}>添加</button>
+                    <div className='wrapper'>
+                        <div className='nav'>ToDoList</div>
+                        <input className='input' placeholder="添加todo" value={this.state.inputValue} onChange={this.handleInput} />
+                        <button className='button' onClick={this.addTask}>添加</button>
+                    </div>
                 </div>
-                <div className='taskList'>
-                    <TodoBorder title='正在进行' taskList={this.state.taskList} handleDelete={this.handleDelete} handleClick={this.handleClick} />
-                    <TodoBorder title='已经完成' taskList={this.state.completedList} handleDelete={this.handleItemDelete} handleClick={this.handleItemClick} />
-                </div>
-                <div className='completedList'>
+                <div className="context">
+                    <div className='taskList'>
+                        <TodoBorder title='正在进行' taskList={this.state.taskList} handleDelete={this.handleDelete} handleClick={this.handleClick} checked='' />
+                        <TodoBorder title='已经完成' taskList={this.state.completedList} handleDelete={this.handleItemDelete} handleClick={this.handleItemClick} checked='checked' />
+                    </div>
+                    <div className='copyright'>
+                        Created by your Boyfriend<br />
+                        Copyright © 2021 WXC
+                    </div>
                 </div>
             </Fragment>
         )

@@ -5,18 +5,20 @@ class TodoBorder extends Component {
 
     render() {
         return (
-            <Fragment>
-                <div>{this.props.title}</div>
-                <div>{this.props.taskList.length}个</div>
+            <div className='border'>
+                <div className='wrapper'>
+                    <h2>{this.props.title}</h2>
+                    <div className='number'>{this.props.taskList.length}</div>
+                </div>
                 <div>
                     {
                         this.props.taskList.map((item, index) => {
-                            return <TodoItem item={item} key={index} index={index}
+                            return <TodoItem item={item} key={index} index={index} checked={this.props.checked}
                                 handleDelete={this.props.handleDelete} handleClick={this.props.handleClick} />
                         })
                     }
                 </div>
-            </Fragment>
+            </div>
         )
     }
 }

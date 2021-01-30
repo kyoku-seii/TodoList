@@ -11,10 +11,13 @@ class TodoItem extends Component {
 
     render() {
         return (
-            <Fragment>
-                <div onClick={this.handleClick}>{this.props.item}</div>
-                <div onClick={this.handleDelete}>删除</div>
-            </Fragment>
+            <div className='item'>
+                <input type="checkbox" className='input' onClick={this.handleClick} checked={this.props.checked}></input>
+                <div onClick={this.handleClick} className='task'>
+                    {this.props.item}
+                </div>
+                <div onClick={this.handleDelete} className="deleteBtn">删除</div>
+            </div>
         )
     }
 }
