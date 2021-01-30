@@ -5,8 +5,8 @@ class TodoItem extends Component {
         super(props)
         this.handleClick = this.handleClick.bind(this)
     }
-    handleClick() {
-        this.props.deleteItem(this.props.index)
+    handleClick = () => {
+        console.log(this.props.index)
     }
 
     render() {
