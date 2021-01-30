@@ -84,8 +84,8 @@ class TodoList extends Component {
                         <TodoBorder title='已经完成' taskList={this.state.completedList} handleDelete={this.handleItemDelete} handleClick={this.handleItemClick} checked='checked' />
                     </div>
                     <div className='copyright'>
-                        Created by your Boyfriend<br />
-                        Copyright © 2021 WXC
+                        Created by WXC<br />
+                        Copyright © 2021
                     </div>
                 </div>
             </Fragment>
