@@ -11,7 +11,7 @@ class TodoItem extends Component {
 
     render() {
         return (
-            <div className='item'>
+            <div className={['item', this.props.checked ? 'checked' : 'unchecked'].join(' ')}>
                 <input type="checkbox" className='input' onClick={this.handleClick} checked={this.props.checked} readOnly></input>
                 <div onClick={this.handleClick} className='task'>
                     {this.props.item}

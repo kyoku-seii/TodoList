@@ -119,3 +119,7 @@ body{
     color:#999;
     text-align:center;
 }
+
+.item.checked{
+    opacity: 0.5;
+}

@@ -7,8 +7,8 @@ class TodoList extends Component {
         super(props)
         this.state = {
             inputValue: '',
-            taskList: ['study'],
-            completedList: ['running']
+            taskList: [],
+            completedList: []
         }
     }
 
@@ -80,7 +80,8 @@ class TodoList extends Component {
                 </div>
                 <div className="context">
                     <div className='taskList'>
-                        <TodoBorder title='正在进行' taskList={this.state.taskList} handleDelete={this.handleDelete} handleClick={this.handleClick} checked='' />
+                        <TodoBorder title='正在进行'
+                            taskList={this.state.taskList} handleDelete={this.handleDelete} handleClick={this.handleClick} checked='' />
                         <TodoBorder title='已经完成' taskList={this.state.completedList} handleDelete={this.handleItemDelete} handleClick={this.handleItemClick} checked='checked' />
                     </div>
                     <div className='copyright'>
