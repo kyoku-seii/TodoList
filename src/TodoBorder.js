@@ -1,4 +1,4 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import TodoItem from './TodoItem'
 
 class TodoBorder extends Component {

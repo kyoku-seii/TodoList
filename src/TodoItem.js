@@ -1,4 +1,4 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 
 class TodoItem extends Component {
 
@@ -12,12 +12,16 @@ class TodoItem extends Component {
     render() {
         return (
             <div className='item'>
-                <input type="checkbox" className='input' onClick={this.handleClick} checked={this.props.checked}></input>
+                <input type="checkbox" className='input' onClick={this.handleClick} checked={this.props.checked} readOnly></input>
                 <div onClick={this.handleClick} className='task'>
                     {this.props.item}
                 </div>
-                <div onClick={this.handleDelete} className="deleteBtn">删除</div>
-            </div>
+                <div onClick={this.handleDelete} className="deleteBtn">
+                    <svg className="icon">
+                        <use xlinkHref="#icon-shanchu"></use>
+                    </svg>
+                </div>
+            </div >
         )
     }
 }
