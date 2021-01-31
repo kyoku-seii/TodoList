@@ -11,6 +11,11 @@ class TodoList extends Component {
             completedList: []
         }
     }
+    keyDown = (e) => {
+        if (e.keyCode === 13) {
+            this.addTask()
+        }
+    }
 
     handleInput = (e) => {
         this.setState(() => {
@@ -74,7 +79,7 @@ class TodoList extends Component {
                 <div className='header'>
                     <div className='wrapper'>
                         <div className='nav'>ToDoList</div>
-                        <input className='input' placeholder="添加todo" value={this.state.inputValue} onChange={this.handleInput} />
+                        <input className='input' placeholder="添加todo" value={this.state.inputValue} onChange={this.handleInput} onKeyDown={this.keyDown} />
                         <button className='button' onClick={this.addTask}>添加</button>
                     </div>
                 </div>
