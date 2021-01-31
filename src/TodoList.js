@@ -2,13 +2,17 @@ import { Component, Fragment } from "react";
 import TodoBorder from "./TodoBorder"
 import './style.css'
 
+
+
 class TodoList extends Component {
     constructor(props) {
         super(props)
+        const taskList = localStorage.getItem('taskList')
+        const competedList = localStorage.getItem('completedList')
         this.state = {
             inputValue: '',
-            taskList: [],
-            completedList: []
+            taskList: taskList ? JSON.parse(taskList) : [],
+            completedList: competedList ? JSON.parse(competedList) : []
         }
     }
     keyDown = (e) => {
@@ -50,8 +54,6 @@ class TodoList extends Component {
             }
         })
     }
-
-
     handleDelete = (index) => {
         this.setState((prevState) => {
             const newTaskList = [...prevState.taskList]
@@ -71,6 +73,14 @@ class TodoList extends Component {
             }
         })
         return this.state.completedList[index]
+    }
+    listener = (e) => {
+        localStorage.setItem('taskList', JSON.stringify(this.state.taskList))
+        localStorage.setItem('completedList', JSON.stringify(this.state.completedList))
+
+    }
+    componentDidMount() {
+        window.addEventListener('beforeunload', this.listener)
     }
 
     render() {
